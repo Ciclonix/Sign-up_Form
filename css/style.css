@@ -9,6 +9,7 @@
 body {
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
+  overflow-y: hidden;
 }
 
 img, picture, video, canvas, svg {
@@ -39,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --side-width: max(30vw, 400px);
   --side-height: 100vh;
+  --shadow-color: rgb(156, 156, 156);
 }
 
 body {
@@ -90,11 +92,11 @@ body {
 #main {
   flex: auto;
   background-color: #F9FAFB;
-  height: 100%;
-  min-width: 1000px;
+  height: 100vh;
+  min-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  overflow-y: scroll;
 }
 
 #e1,
@@ -118,7 +120,7 @@ body {
 #e2 {
   background-color: white;
   padding-top: 20px;
-  box-shadow: 0px 3px 5px rgb(156, 156, 156);
+  box-shadow: 0px 3px 5px var(--shadow-color);
 }
 
 form {
@@ -146,6 +148,23 @@ label {
 input {
   font-size: 1rem;
   width: 250px;
+  height: 35px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: rgb(0, 120, 255);
+  box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+input:user-invalid {
+  border-color: red;
+}
+
+input[type="password"]:invalid {
+  border-color: red;
 }
 
 #e3 > button {
