@@ -54,6 +54,8 @@ body {
   display: flex;
 }
 
+
+/* side bar */
 #side {
   flex: 0 0 var(--side-width);
   background-image: url("../imgs/side_image.jpg");
@@ -71,20 +73,20 @@ body {
 #logo {
   background-color: rgba(0, 0, 0, 0.5);
   margin-top: 15vh;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "norsebold";
+  font-family: "norsebold", sans-serif;
 }
 
-#side > p {
+#credits {
   margin-bottom: 10px;
   color: white;
   text-align: center;
 }
 
-#side a {
+#credits a {
   color: inherit;
 }
 
@@ -100,6 +102,8 @@ body {
   color: white;
 }
 
+
+/* main content */
 #main {
   flex: auto;
   background-color: #F9FAFB;
@@ -188,10 +192,9 @@ input[type="password"]:invalid + label::after {
   padding-bottom: 60px;
 }
 
-#e3 > button {
+button[form="fake_form"] {
   margin-bottom: 40px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 30px 0;
   background-color: rgb(62, 98, 62);
   color: white;
   border: none;
