@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'norsebold';
+  src: url('../fonts/norse-bold-webfont.woff2') format('woff2'),
+       url('../fonts/norse-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -9,7 +17,6 @@
 body {
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
-  overflow-y: hidden;
 }
 
 img, picture, video, canvas, svg {
@@ -38,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
-  --side-width: max(30vw, 400px);
+  --side-width: max(30vw, 300px);
   --side-height: 100vh;
   --shadow-color: rgb(156, 156, 156);
 }
@@ -68,9 +75,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "norsebold";
 }
 
-#side p {
+#side > p {
   margin-bottom: 10px;
   color: white;
   text-align: center;
@@ -81,11 +89,14 @@ body {
 }
 
 #logo > img {
-  height: 7rem;
+  flex: 0 1 auto;
+  width: max(6vw, 4rem);
+  height: auto;
 }
 
 #logo > p {
-  font-size: 5rem;
+  flex: 0 1 auto;
+  font-size: max(6vw, 4rem);
   color: white;
 }
 
@@ -94,40 +105,41 @@ body {
   background-color: #F9FAFB;
   height: 100vh;
   min-width: 600px;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #e1,
 #e2,
 #e3 {
-  flex: 1;
   font-family: sans-serif;
   font-size: 1.5rem;
   padding-left: 3vw;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 #e1 {
   display: flex;
   align-items: flex-end;
-  font-weight: 700;
+  font-weight: 550;
   max-width: 60ch;
+  padding-top: 15vh;
 }
 
 #e2 {
   background-color: white;
   padding-top: 20px;
+  height: 300px;
   box-shadow: 0px 3px 5px var(--shadow-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  padding-top: 20px;
+  gap: 15px;
+  padding-top: 10px;
 }
 
 form > div {
@@ -165,6 +177,15 @@ input:user-invalid {
 
 input[type="password"]:invalid {
   border-color: red;
+}
+
+input[type="password"]:invalid + label::after {
+  content: "* Passwords do not match";
+  color: red;
+}
+
+#e3 {
+  padding-bottom: 60px;
 }
 
 #e3 > button {
