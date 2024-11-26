@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "norsebold", inherit;
+  font-family: "norsebold";
 }
 
 #logo > img {
@@ -196,12 +196,17 @@ button[form="fake_form"] {
   padding: 15px 60px;
   border: none;
   border-radius: 10px;
+  color: white;
   font-size: 1.4rem;
   font-weight: 550;
-  color: white;
+}
+
+#e3 {
+  font-size: 1.2rem;
 }
 
 #e3 a {
   text-decoration: none;
   color: var(--green-theme);
+  font-weight: 550;
 }
